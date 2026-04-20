@@ -2,8 +2,9 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { LayoutDashboard, ArrowLeftRight, TrendingUp } from "lucide-react"
+import { LayoutDashboard, ArrowLeftRight, TrendingUp, Sun, Moon } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useTheme } from "@/components/theme-provider"
 
 const navItems = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
@@ -13,6 +14,7 @@ const navItems = [
 
 export function Sidebar() {
   const pathname = usePathname()
+  const { theme, toggle } = useTheme()
 
   return (
     <aside className="flex h-screen w-56 flex-col border-r bg-muted/30 px-3 py-6 shrink-0">
@@ -36,6 +38,15 @@ export function Sidebar() {
           </Link>
         ))}
       </nav>
+      <div className="mt-auto px-2">
+        <button
+          onClick={toggle}
+          className="flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-muted hover:text-foreground w-full"
+        >
+          {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
+          {theme === "dark" ? "Light mode" : "Dark mode"}
+        </button>
+      </div>
     </aside>
   )
 }
