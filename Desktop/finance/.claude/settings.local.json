@@ -1,0 +1,40 @@
+{
+  "permissions": {
+    "allow": [
+      "Skill(statusline)",
+      "Bash(find /Users/nandrus/Desktop/finance -type f -name \"package.json\" -o -name \"tsconfig.json\" -o -name \"next.config.*\" -o -name \"prisma.schema\" 2>/dev/null | head -20)",
+      "Bash(git -C /Users/nandrus/Desktop/finance log --oneline -10 2>/dev/null)",
+      "Bash(git -C /Users/nandrus/Desktop/finance branch -a 2>/dev/null)",
+      "Bash(git -C /Users/nandrus/Desktop/finance log -1 --name-status 2>/dev/null)",
+      "Bash(git -C /Users/nandrus/Desktop/finance show --stat HEAD 2>/dev/null)",
+      "Bash(git -C /Users/nandrus/Desktop/finance status 2>/dev/null)",
+      "Bash(git -C /Users/nandrus/Desktop/finance rev-parse HEAD 2>/dev/null && git -C /Users/nandrus/Desktop/finance cat-file -p HEAD 2>/dev/null)",
+      "Bash(git -C /Users/nandrus/Desktop/finance cat-file -p 1a001158ed54b139c8033c2d4ad48d487503ece0 2>/dev/null)",
+      "Bash(git -C /Users/nandrus/Desktop/finance show HEAD:README.md 2>/dev/null)",
+      "Bash(git -C /Users/nandrus/Desktop/finance tag -l 2>/dev/null)",
+      "Bash(git -C /Users/nandrus/Desktop/finance log --all --oneline 2>/dev/null)",
+      "Bash(git -C /Users/nandrus/Desktop/finance remote -v 2>/dev/null)",
+      "Bash(npm install prisma @prisma/client yahoo-finance2 recharts lucide-react 2>&1)",
+      "Bash(npx shadcn@latest init --yes 2>&1 || echo \"shadcn init needs interactive, trying with defaults\")",
+      "Bash(echo \"\" | npx shadcn@latest init --defaults 2>&1 || true)",
+      "Bash(npx shadcn@latest add card table badge input label select form --yes 2>&1)",
+      "Bash(npx shadcn@latest add form --yes 2>&1)",
+      "Bash(npx prisma init --datasource-provider sqlite 2>&1)",
+      "Bash(npx prisma --version 2>&1 | head -5)",
+      "Bash(npx prisma migrate dev --name init 2>&1)",
+      "Bash(npm install -D ts-node 2>&1 | tail -5)",
+      "Bash(npx prisma generate 2>&1 | tail -5)",
+      "Bash(npx prisma db seed 2>&1)",
+      "Bash(npm install -D tsx 2>&1 | tail -3)",
+      "Bash(npm install prisma@^5 @prisma/client@^5 2>&1 | tail -5)",
+      "Bash(npx prisma --version 2>&1 | head -3)",
+      "Bash(npm run build 2>&1)",
+      "Bash(ls /Users/nandrus/Desktop/finance/next.config* 2>&1)",
+      "Bash(sleep 8 && curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000 2>&1)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/transactions && echo \"\" && curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000/portfolio 2>&1)",
+      "Bash(git -C /Users/nandrus/Desktop/finance rev-parse --show-toplevel && git -C /Users/nandrus/Desktop/finance log --oneline -3)",
+      "Bash(git -C /Users/nandrus diff --stat HEAD && git -C /Users/nandrus status Desktop/finance)",
+      "Bash(git add . && git status --short | head -30)"
+    ]
+  }
+}

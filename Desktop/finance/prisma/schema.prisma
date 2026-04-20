@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Transaction {
+  id        Int      @id @default(autoincrement())
+  type      String   // "INCOME" | "EXPENSE"
+  amount    Float
+  category  String
+  date      DateTime
+  note      String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model PortfolioItem {
+  id        Int      @id @default(autoincrement())
+  ticker    String   @unique
+  shares    Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
